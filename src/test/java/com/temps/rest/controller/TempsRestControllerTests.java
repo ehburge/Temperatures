@@ -89,11 +89,6 @@ public class TempsRestControllerTests {
 		Celsius celsius = new Celsius.Build('C', -1, new BigDecimal("15.6"), new Date(System.currentTimeMillis()),
 				new Date(System.currentTimeMillis())).build();
 
-		// String custStr = asJsonString(cust);
-		//
-		// Customer reconCust = GreetingController.jsonAsObject(custStr);
-		// System.out.println(asJsonString(reconCust));
-
 		MvcResult mvcr = mockMvc
 				.perform(MockMvcRequestBuilders.post("/temps").content(TempsRestController.asJsonString(celsius))
 						.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
@@ -102,12 +97,12 @@ public class TempsRestControllerTests {
 
 		String resTemp = mvcr.getResponse().getContentAsString();
 
-		Celsius resCustObj = TempsRestController.jsonAsObject(resTemp, Celsius.class);
+		Celsius resTempObj = TempsRestController.jsonAsObject(resTemp, Celsius.class);
 
-		// assertTrue(resCustObj.getId().equals(celsius.getId()));
-		assertTrue(resCustObj.getCelsius().equals(celsius.getCelsius()));
-		assertTrue(resCustObj.getUpdate_date().equals(celsius.getUpdate_date()));
-		assertTrue(resCustObj.getCreate_date().equals(celsius.getCreate_date()));
+		// assertTrue(resTempObj.getId().equals(celsius.getId()));
+		assertTrue(resTempObj.getCelsius().equals(celsius.getCelsius()));
+		assertTrue(resTempObj.getUpdate_date().equals(celsius.getUpdate_date()));
+		assertTrue(resTempObj.getCreate_date().equals(celsius.getCreate_date()));
 
 		// MediaType depends on ContentType in GreetingController
 
@@ -131,7 +126,7 @@ public class TempsRestControllerTests {
 
 		String resTemp = postmvcr.getResponse().getContentAsString();
 
-		Celsius resCustObj = TempsRestController.jsonAsObject(resTemp, Celsius.class);
+		Celsius resTempObj = TempsRestController.jsonAsObject(resTemp, Celsius.class);
 
 		ResultActions ra = this.mockMvc.perform(get("/temps/501")).andDo(print()).andExpect(status().isOk());
 		// .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
@@ -163,7 +158,7 @@ public class TempsRestControllerTests {
 		// Verify that the returned temp from PUT matches
 		// the updated temp before the PUT
 		// **********************
-		// assertTrue(resCustObj.getId().equals(celsius.getId()));
+		
 		assertTrue(putResult.getCelsius().equals(getcelsius.getCelsius()));
 		assertTrue(putResult.getUpdate_date().getTime() != getcelsius.getCreate_date().getTime());
 		assertTrue(putResult.getCreate_date().getTime() == getcelsius.getCreate_date().getTime());

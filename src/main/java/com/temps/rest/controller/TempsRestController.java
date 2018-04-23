@@ -199,8 +199,6 @@ public class TempsRestController {
 		// headers.setContentType(MediaType.APPLICATION_JSON);
 
 		return new ResponseEntity<Temp>(idTemp, headers, HttpStatus.CREATED);
-		// return idCust;
-		// return Response.ok(idCust).build();
 	}
 
 	@PutMapping("/temps/{id}")
