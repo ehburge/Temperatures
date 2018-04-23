@@ -48,18 +48,18 @@ public class TempsRestControllerTests {
 
 	@Autowired
 	private MockMvc mockMvc;
-	
+
 	@Test
 	public void getTempsStream() throws Exception {
 
 		ResultActions ra = this.mockMvc.perform(get("/tempsStream")).andDo(print()).andExpect(status().isOk());
-				//.andExpect(jsonPath("$.content").value("Hello, World!"));
+		// .andExpect(jsonPath("$.content").value("Hello, World!"));
 		String tempsStr = ra.andReturn().getResponse().getContentAsString();
-		
+
 		Collection<String> allTemps = TempsRestController.jsonAsObject(tempsStr, Collection.class);
-		
+
 		System.out.println("getTempsStream size: " + allTemps.size());
-		
+
 		System.out.println("***Begin temps listing");
 		for (Object temp : allTemps) {
 			System.out.println(temp);
@@ -71,11 +71,12 @@ public class TempsRestControllerTests {
 	public void getIdParam() throws Exception {
 		//
 		ResultActions ra = this.mockMvc.perform(get("/temps/102")).andDo(print()).andExpect(status().isOk());
-				//.andExpect(jsonPath("$.content").value("Hello, Spring Community!")).andReturn();
-		
+		// .andExpect(jsonPath("$.content").value("Hello, Spring
+		// Community!")).andReturn();
+
 		String resTemp = ra.andReturn().getResponse().getContentAsString();
 		System.out.println("result str :" + resTemp);
-		
+
 		TempScale ts = TempsRestController.jsonAsObject(resTemp, TempScale.class);
 
 		assertEquals(new Character('F'), ts.get_tempScale());
@@ -118,10 +119,9 @@ public class TempsRestControllerTests {
 		Celsius celsius = new Celsius.Build('C', -1, new BigDecimal("11.8"), new Date(System.currentTimeMillis()),
 				new Date(System.currentTimeMillis())).build();
 
-		// String custStr = asJsonString(cust);
-		//
-		// Customer reconCust = GreetingController.jsonAsObject(custStr);
-		// System.out.println(asJsonString(reconCust));
+		// **********************
+		// Create a new temp
+		// **********************
 
 		MvcResult postmvcr = mockMvc
 				.perform(MockMvcRequestBuilders.post("/temps").content(TempsRestController.asJsonString(celsius))
@@ -134,32 +134,57 @@ public class TempsRestControllerTests {
 		Celsius resCustObj = TempsRestController.jsonAsObject(resTemp, Celsius.class);
 
 		ResultActions ra = this.mockMvc.perform(get("/temps/501")).andDo(print()).andExpect(status().isOk());
-				//.andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
+		// .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
 
 		MvcResult mvcr = ra.andReturn();
 		String jsonResult = mvcr.getResponse().getContentAsString();
-		
+
 		TempScale tempScale = TempsRestController.jsonAsObject(jsonResult, TempScale.class);
-		
-		//update 
+
+		// **********************
+		// Update the Temperature with PUT
+		// **********************
+
 		Celsius getcelsius = tempScale.get_Celsius();
 		getcelsius.setCelsius(new BigDecimal("1.4"));
-		
+
 		MvcResult putMvcResult = mockMvc
 				.perform(MockMvcRequestBuilders.put("/temps/501").content(TempsRestController.asJsonString(getcelsius))
 						.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
-				.andDo(print()).andExpect(status().isOk())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON)).andReturn();
+				.andDo(print()).andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
+				.andReturn();
 
 		String putresTemp = putMvcResult.getResponse().getContentAsString();
 
 		TempScale tsPutResult = TempsRestController.jsonAsObject(putresTemp, TempScale.class);
 		Celsius putResult = tsPutResult.get_Celsius();
 
+		// **********************
+		// Verify that the returned temp from PUT matches
+		// the updated temp before the PUT
+		// **********************
 		// assertTrue(resCustObj.getId().equals(celsius.getId()));
 		assertTrue(putResult.getCelsius().equals(getcelsius.getCelsius()));
 		assertTrue(putResult.getUpdate_date().getTime() != getcelsius.getCreate_date().getTime());
 		assertTrue(putResult.getCreate_date().getTime() == getcelsius.getCreate_date().getTime());
+
+		// **********************
+		// Do a GET for good measure
+		// **********************
+
+		ResultActions getRA = this.mockMvc.perform(get("/temps/501")).andDo(print()).andExpect(status().isOk());
+		// .andExpect(jsonPath("$.content").value("Hello, Spring
+		// Community!")).andReturn();
+
+		String getRAtemp = getRA.andReturn().getResponse().getContentAsString();
+		System.out.println("result str :" + getRAtemp);
+
+		TempScale getTS = TempsRestController.jsonAsObject(getRAtemp, TempScale.class);
+
+		assertEquals(tsPutResult.get_tempScale(), getTS.get_tempScale());
+		assertEquals(tsPutResult.get_Celsius().getId(), getTS.get_Celsius().getId());
+		assertEquals(tsPutResult.get_Celsius().getCelsius(), getTS.get_Celsius().getCelsius());
+		assertTrue(tsPutResult.get_Celsius().getUpdate_date().getTime() == getTS.get_Celsius().getUpdate_date().getTime());
 
 	}
 }
