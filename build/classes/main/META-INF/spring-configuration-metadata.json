@@ -1,0 +1,12 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.temps.rest.config.AppConfig",
+      "name": "temps.mysql",
+      "sourceMethod": "wineSource()",
+      "type": "javax.sql.DataSource"
+    }
+  ],
+  "properties": []
+}
