@@ -1,8 +1,8 @@
-INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (1,'15.6_F',{ts '2018-04-28 14:00:41.'},{ts '2018-04-28 14:00:41.'});
-INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (2,'13.3_C',{ts '2018-04-28 14:00:53.'},{ts '2018-04-28 14:00:53.'});
-INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (3,'15.9_F',{ts '2018-04-28 14:01:18.'},{ts '2018-04-28 14:01:18.'});
-INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (4,'9.6_C',{ts '2018-04-28 14:01:42.'},{ts '2018-04-28 14:01:42.'});
-INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (5,'1.4_C',{ts '2018-04-28 14:02:01.'},{ts '2018-04-28 14:02:01.'});
+INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (1,'15.6_F',{ts '2018-04-28 14:00:41.0'},{ts '2018-04-28 14:00:41.0'});
+INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (2,'13.3_C',{ts '2018-04-28 14:00:53.0'},{ts '2018-04-28 14:00:53.0'});
+INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (3,'15.9_F',{ts '2018-04-28 14:01:18.0'},{ts '2018-04-28 14:01:18.0'});
+INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (4,'9.6_C',{ts '2018-04-28 14:01:42.0'},{ts '2018-04-28 14:01:42.0'});
+INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (5,'1.4_C',{ts '2018-04-28 14:02:01.0'},{ts '2018-04-28 14:02:01.0'});
 INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (6,'20.6_F',{ts '2018-04-28 14:00:41.0'},{ts '2018-04-28 14:00:41.0'});
 INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (7,'12.7_F',{ts '2018-04-28 14:00:53.0'},{ts '2018-04-28 14:00:53.0'});
 INSERT INTO celsius_entity (id,celsius_tempscale,create_date,update_date) VALUES (8,'11.8_F',{ts '2018-04-28 14:01:18.0'},{ts '2018-04-28 14:01:18.0'});
