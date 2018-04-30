@@ -1,7 +1,6 @@
 package com.temps.rest.model;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 public class Fahrenheit implements Temp {
 
@@ -33,15 +32,15 @@ public class Fahrenheit implements Temp {
 		_Celsius.setCelsius(celsius);
 	}
 
-	public Date getCreate_date() {
+	public String getCreate_date() {
 		return _Celsius.getCreate_date();
 	}
 
-	public Date getUpdate_date() {
+	public String getUpdate_date() {
 		return _Celsius.getUpdate_date();
 	}
 
-	public void setUpdate_date(Date update_date) {
+	public void setUpdate_date(String update_date) {
 		_Celsius.setUpdate_date(update_date);
 	}
 
@@ -51,10 +50,5 @@ public class Fahrenheit implements Temp {
 
 	public boolean equals(Object obj) {
 		return _Celsius.equals(obj);
-	}
-
-	@Override
-	public void setId(Integer id) {
-		this._Celsius.setId(id);
 	}
 }

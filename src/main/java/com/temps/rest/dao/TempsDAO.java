@@ -1,23 +1,29 @@
 package com.temps.rest.dao;
 
+import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 
-import com.temps.rest.model.Celsius;
-import com.temps.rest.model.Temp;
-import com.temps.rest.model.TempScale;
+import com.temps.rest.model.CelsiusAll;
 
 public interface TempsDAO {
+	
+	Collection<CelsiusAll> tempsRange(Date fromDate, Date toDate);
 
-	Iterator<Temp> temps();
+	Iterator<CelsiusAll> tempsAll();
 
-	Iterator<Temp> tempsVolume();
+	CelsiusAll get(Integer id);
 
-	TempScale get(Integer id);
+	/**
+	 * tempScale is 'C' or 'F'
+	 * @param tempScale
+	 * @param temp
+	 * @return
+	 */
+	CelsiusAll create(CelsiusAll celsius);
 
-	Temp create(Temp temp);
+	CelsiusAll delete(Integer id);
 
-	TempScale delete(Integer id);
-
-	TempScale update(Integer id, Celsius temp);
+	CelsiusAll update(Integer id, CelsiusAll temp);
 
 }

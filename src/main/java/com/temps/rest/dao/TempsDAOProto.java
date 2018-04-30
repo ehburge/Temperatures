@@ -1,42 +1,34 @@
 package com.temps.rest.dao;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.temps.rest.model.Celsius;
-import com.temps.rest.model.Fahrenheit;
-import com.temps.rest.model.Temp;
-import com.temps.rest.model.TempScale;
+import com.temps.rest.model.CelsiusAll;
 
 @Component("tempsDAOProto")
 public class TempsDAOProto implements TempsDAO {
 
-	@Autowired
 	TempsDASetup tempsDASetup;
 
 	TempsDAOProto() {
+		tempsDASetup = new TempsDASetup();
+		tempsDASetup.dataInit();
 	}
 
-	public Iterator<Temp> temps() {
-		return tempsDASetup.values().iterator();
-	}
-
-	/**
-	 * This creates a large numer of temperature objects (100)
-	 * then invokes the temps iterator.
-	 * 
-	 * This proves that an iterator can be used for high volume responses.
-	 * 
-	 * This is a scalable approach because it does not load collection into memory.
-	 * Instead, the iterator is used, which can be abstracted to iterate a ResultSet.
-	 */
 	@Override
-	public Iterator<Temp> tempsVolume() {
+	public Iterator<CelsiusAll> tempsAll() {
+		
+		return tempsDASetup.temps();
+	}
+
+	public void tempsVolume() {
 
 		Random rnd = new Random();
 		Character tempC;
@@ -44,83 +36,52 @@ public class TempsDAOProto implements TempsDAO {
 
 		for (int i = 0; i < 100; i++) {
 			tempC = (rnd.nextBoolean()) ? 'F' : 'C';
-
-			int key = tempsDASetup.getAtomicInteger().incrementAndGet();
 			temp = rnd.nextInt(40 - -10 + 1) + -10;
 
-			Celsius cel = new Celsius.Build(tempC, key, new BigDecimal(temp), new Date(System.currentTimeMillis()),
-					new Date(System.currentTimeMillis())).build();
-			if (tempC.equals('F')) {
-				tempsDASetup.put(key, new Fahrenheit(cel));
-			} else {
-				tempsDASetup.put(key, cel);
-			}
-		}
+			CelsiusAll cel =
+					new CelsiusAll.BuildPost(tempC, new BigDecimal(temp)).build();
 
-		return temps();
+			tempsDASetup.create(cel);
+
+		}
 
 	}
 
 	@Override
-	public TempScale get(Integer id) {
-		TempScale ts = new TempScale();
+	public Collection<CelsiusAll> tempsRange(Date fromDate, Date toDate) {
+		
+		List<CelsiusAll> lst = new ArrayList<CelsiusAll>();
+		CelsiusAll ca =
+				new CelsiusAll.BuildPost('C', new BigDecimal("16.3")).build();
+		ca.setId(1);
+		lst.add(ca);
+		CelsiusAll ca2 =
+				new CelsiusAll.BuildPost('F', new BigDecimal("14.7")).build();
+		ca2.setId(2);
+		lst.add(ca2);
 
-		Temp t = tempsDASetup.get(id);
-
-		ts.set_Celsius(t.objCelsius());
-
-		if (t instanceof Fahrenheit) {
-			ts.set_tempScale('F');
-		} else {
-			ts.set_tempScale('C');
-		}
-		return ts;
+		return lst;
 	}
 
 	@Override
-	public Temp create(Temp temp) {
-
-		temp.setId(tempsDASetup.getAtomicInteger().incrementAndGet());
-		tempsDASetup.put(temp.getId(), temp);
-		return temp;
+	public CelsiusAll get(Integer id) {
+		return tempsDASetup.get(id);
 	}
 
 	@Override
-	public TempScale delete(Integer id) {
+	public CelsiusAll create(CelsiusAll celPost) {
 
-		TempScale ts = null;
-		if (tempsDASetup.containsKey(id)) {
-			Temp temp = tempsDASetup.remove(id);
-			ts = new TempScale();
-			ts.set_Celsius(temp.objCelsius());
-
-			if (temp instanceof Fahrenheit) {
-				ts.set_tempScale('F');
-			} else {
-				ts.set_tempScale('C');
-			}
-		}
-		return ts;
+		return tempsDASetup.create(celPost);
 	}
 
 	@Override
-	public TempScale update(Integer id, Celsius pTemp) {
+	public CelsiusAll delete(Integer id) {
+		return tempsDASetup.delete(id);
+	}
 
-		if (tempsDASetup.containsKey(id)) {
-			Temp t = tempsDASetup.get(id);
-			t.setCelsius(pTemp.getCelsius());
-			t.setUpdate_date(new Date(System.currentTimeMillis()));
-			TempScale ts = new TempScale();
-			if (t instanceof Fahrenheit) {
-				ts.set_tempScale('F');
-				ts.set_Celsius(t.objCelsius());
-			} else {
-				ts.set_tempScale('C');
-				ts.set_Celsius(t.objCelsius());
-			}
-			return ts;
-		}
-		return null;
+	@Override
+	public CelsiusAll update(Integer id, CelsiusAll celsius) {
+		return tempsDASetup.update(id, celsius);
 	}
 
 }

@@ -7,18 +7,18 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
-//@EnableWebMvc
-@ComponentScan("com.temps.rest")
+@ComponentScan("com.temps.rest.*")
 public class AppConfig {
 
-//	@Bean(name = "tempsSource")
-//	@ConfigurationProperties(prefix = "temps.mysql")
-//	public DataSource tempsSource() {
-//		// BasicDataSource dataSource = new BasicDataSource();
-//		DataSource dataSource = DataSourceBuilder.create().build();
-//
-//		return dataSource;
-//	}
+	@ConfigurationProperties(prefix = "spring.datasource")
+	@Bean
+	@Primary
+	public DataSource dataSource() {
+	    return DataSourceBuilder
+	        .create()
+	        .build();
+	}
 }

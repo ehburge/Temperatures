@@ -1,6 +1,8 @@
 package com.temps.rest.controller;
 
+import java.text.ParseException;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 
 import javax.ws.rs.Consumes;
@@ -23,15 +25,142 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.temps.rest.dao.TempsDAO;
 import com.temps.rest.model.Celsius;
+import com.temps.rest.model.CelsiusAll;
 import com.temps.rest.model.Fahrenheit;
 import com.temps.rest.model.Temp;
-import com.temps.rest.model.TempScale;
 
 @RestController
 public class TempsRestController {
 
 	public TempsRestController() {
 		super();
+	}
+
+	@Autowired
+	@Qualifier("tempsDAOService")
+	private TempsDAO tempsDAO;
+
+	@GetMapping(path = "/temps", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Collection<Temp>> getTemps() {
+
+		FahrenheitIterator fItr = new FahrenheitIterator(tempsDAO.tempsAll());
+
+		Collection<Temp> c = new StreamingCollection(fItr);
+
+		return new ResponseEntity<Collection<Temp>>(c, HttpStatus.OK);
+
+	}
+
+	@GetMapping(path = "/temps/from/{fromDt}/to/{toDt}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Collection<Temp>> getTempsRange(
+			@PathVariable(value = "fromDt") String fromDt,
+			@PathVariable(value = "toDt") String toDt
+	) {
+
+		Date fromDate;
+		Date toDate;
+		try {
+			fromDate = Celsius.DateFormatter.parse(fromDt);
+			toDate = Celsius.DateFormatter.parse(toDt);
+
+			Collection<CelsiusAll> lst = tempsDAO.tempsRange(fromDate, toDate);
+
+			FahrenheitIterator fItr = new FahrenheitIterator(lst.iterator());
+
+			Collection<Temp> c = new StreamingCollection(fItr);
+			return new ResponseEntity<Collection<Temp>>(c, HttpStatus.OK);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		return new ResponseEntity<Collection<Temp>>(HttpStatus.BAD_REQUEST);
+
+	}
+
+	@GetMapping("/temps/{id}")
+	public ResponseEntity<Temp> getTemp(@PathVariable(value = "id") String id) {
+
+		Temp temp = tempsDAO.get(new Integer(id));
+		if (temp == null) {
+			return new ResponseEntity<Temp>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Temp>(temp, HttpStatus.OK);
+	}
+
+	@PostMapping("/temps")
+	@Consumes(MediaType.APPLICATION_JSON_VALUE)
+	@Produces(MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<CelsiusAll> createTemp(
+			@RequestBody CelsiusAll celPost
+	) {
+		// @RequestBody is key for post - otherwise the body is null
+
+		CelsiusAll idTemp = tempsDAO.create(celPost);
+
+		HttpHeaders headers = new HttpHeaders();
+		// Change content type of response
+		// headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		// headers.setContentType(MediaType.APPLICATION_JSON);
+
+		return new ResponseEntity<CelsiusAll>(
+				idTemp, headers, HttpStatus.CREATED);
+	}
+
+	@PutMapping("/temps/{id}")
+	@Consumes(MediaType.APPLICATION_JSON_VALUE)
+	@Produces(MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Temp> putTemp(
+			@PathVariable(value = "id") String id,
+			@RequestBody CelsiusAll celsius) {
+
+		Temp rtnTemp = tempsDAO.update(new Integer(id), celsius);
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		if (null == rtnTemp) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Temp>(rtnTemp, headers, HttpStatus.OK);
+	}
+
+	@DeleteMapping("/temps/{id}")
+	@Consumes(MediaType.APPLICATION_JSON_VALUE)
+	@Produces(MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Temp> deleteTemp(
+			@PathVariable(value = "id") String id) {
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		Temp rtnTemp = tempsDAO.delete(new Integer(id));
+
+		if (rtnTemp == null) {
+			return new ResponseEntity<Temp>(HttpStatus.NOT_FOUND);
+		}
+
+		return new ResponseEntity<Temp>(rtnTemp, headers, HttpStatus.OK);
+	}
+
+	public static <T> T jsonAsObject(final String json, Class<T> cls) {
+		try {
+			final ObjectMapper mapper = new ObjectMapper();
+			final T type = mapper.readValue(json, cls);
+			return type;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public static String asJsonString(final Object obj) {
+		try {
+			final ObjectMapper mapper = new ObjectMapper();
+			final String jsonContent = mapper.writeValueAsString(obj);
+			return jsonContent;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	private final class StreamingCollection implements Collection<Temp> {
@@ -108,9 +237,9 @@ public class TempsRestController {
 	}
 
 	private final class FahrenheitIterator implements Iterator<Temp> {
-		private Iterator<Temp> itr;
+		private Iterator<CelsiusAll> itr;
 
-		public FahrenheitIterator(Iterator<Temp> itr) {
+		public FahrenheitIterator(Iterator<CelsiusAll> itr) {
 			super();
 			this.itr = itr;
 		}
@@ -132,127 +261,15 @@ public class TempsRestController {
 				fahrNext = false;
 				return fahrObj;
 			}
-			Temp t = itr.next();
-			if (t instanceof Fahrenheit) {
-				fahrObj = (Fahrenheit) t;
+			CelsiusAll ca = itr.next();
+			Celsius c = ca.objCelsius();
+			if (c.tempScale().equals('F')) {
+				fahrObj = new Fahrenheit(c);
 				fahrNext = true;
-				return fahrObj.objCelsius();
-			} else {
-				return t;
 			}
-
+			return c;
 		}
 
 	}
-
-	/**
-	 * Wired with Testing DAO
-	 */
-	@Autowired
-	@Qualifier("tempsDAOProto")
-	private TempsDAO tempsDAO;
-
-	@GetMapping(path = "/temps", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Collection<Temp>> getTemps() {
-
-		FahrenheitIterator fItr = new FahrenheitIterator(tempsDAO.temps());
-
-		Collection<Temp> c = new StreamingCollection(fItr);
-
-		return new ResponseEntity<Collection<Temp>>(c, HttpStatus.OK);
-
-	}
-
-	@GetMapping(path = "/tempsStream", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Collection<Temp>> getTempsStream() {
-
-		FahrenheitIterator fItr = new FahrenheitIterator(tempsDAO.tempsVolume());
-
-		Collection<Temp> c = new StreamingCollection(fItr);
-
-		return new ResponseEntity<Collection<Temp>>(c, HttpStatus.OK);
-
-	}
-
-	@GetMapping("/temps/{id}")
-	public ResponseEntity<TempScale> getTemp(@PathVariable(value = "id") String id) {
-
-		TempScale temp = tempsDAO.get(new Integer(id));
-		if (temp == null) {
-			return new ResponseEntity<TempScale>(HttpStatus.NOT_FOUND);
-		}
-		return new ResponseEntity<TempScale>(temp, HttpStatus.OK);
-	}
-
-	@PostMapping("/temps")
-	@Consumes(MediaType.APPLICATION_JSON_VALUE)
-	@Produces(MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Temp> createTemp(@RequestBody Celsius temp) {
-		// @RequestBody is key for post - otherwise the body is null
-
-		Temp idTemp = tempsDAO.create(temp);
-
-		HttpHeaders headers = new HttpHeaders();
-		// Change content type of response
-		// headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-		headers.setContentType(MediaType.APPLICATION_JSON);
-		// headers.setContentType(MediaType.APPLICATION_JSON);
-
-		return new ResponseEntity<Temp>(idTemp, headers, HttpStatus.CREATED);
-	}
-
-	@PutMapping("/temps/{id}")
-	@Consumes(MediaType.APPLICATION_JSON_VALUE)
-	@Produces(MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<TempScale> putTemp(@PathVariable(value = "id") String id, @RequestBody Celsius celsius) {
-
-		TempScale rtnTemp = tempsDAO.update(new Integer(id), celsius);
-
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-
-		if (null == rtnTemp) {
-			return new ResponseEntity<TempScale>(HttpStatus.NOT_FOUND);
-		}
-		return new ResponseEntity<TempScale>(rtnTemp, headers, HttpStatus.OK);
-	}
-	
-	@DeleteMapping("/temps/{id}")
-	@Consumes(MediaType.APPLICATION_JSON_VALUE)
-	@Produces(MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<TempScale> deleteTemp(@PathVariable(value = "id") String id) {
-
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MediaType.APPLICATION_JSON);
-		
-		TempScale rtnTemp = tempsDAO.delete( new Integer(id) );
-		
-		if (rtnTemp == null) {
-			return new ResponseEntity<TempScale>(HttpStatus.NOT_FOUND);
-		}
-		
-		return new ResponseEntity<TempScale>(rtnTemp, headers, HttpStatus.OK);
-	}
-	
-	public static <T> T jsonAsObject(final String json, Class<T> cls) {
-		try {
-			final ObjectMapper mapper = new ObjectMapper();
-			final T type = mapper.readValue(json, cls);
-			return type;
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
-	 
-	public static String asJsonString(final Object obj) {
-		try {
-			final ObjectMapper mapper = new ObjectMapper();
-			final String jsonContent = mapper.writeValueAsString(obj);
-			return jsonContent;
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
-
 
 }
