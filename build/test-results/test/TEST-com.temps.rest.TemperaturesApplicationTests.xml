@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.temps.rest.TemperaturesApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-04-30T22:51:40" hostname="Edwards-MacBook-Pro" time="0.002">
+  <properties/>
+  <testcase name="contextLoads" classname="com.temps.rest.TemperaturesApplicationTests" time="0.002"/>
+  <system-out><![CDATA[2018-04-30 17:51:39.586  INFO 2073 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.temps.rest.TemperaturesApplicationTests], using SpringBootContextLoader
+2018-04-30 17:51:39.587  INFO 2073 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.temps.rest.TemperaturesApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-04-30 17:51:39.587  INFO 2073 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.temps.rest.TemperaturesApplicationTests]: TemperaturesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-04-30 17:51:39.590  INFO 2073 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.temps.rest.TemperaturesApplication for test class com.temps.rest.TemperaturesApplicationTests
+2018-04-30 17:51:39.592  INFO 2073 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-04-30 17:51:39.593  INFO 2073 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3c26476, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6c9bf422, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@78f2573c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5e527e44, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e23502c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7daa872e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@170b6410, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5ae698eb, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@e1001ab, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@272a64b0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6b4dbfa1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@50243e3]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::       (v1.5.10.RELEASE)
+
+2018-04-30 17:51:39.620  INFO 2073 --- [    Test worker] c.t.rest.TemperaturesApplicationTests    : Starting TemperaturesApplicationTests on Edwards-MacBook-Pro with PID 2073 (started by ted in /Users/ted/git_temps/Temperatures)
+2018-04-30 17:51:39.620  INFO 2073 --- [    Test worker] c.t.rest.TemperaturesApplicationTests    : No active profile set, falling back to default profiles: default
+2018-04-30 17:51:39.621  INFO 2073 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@69c42591: startup date [Mon Apr 30 17:51:39 CDT 2018]; root of context hierarchy
+2018-04-30 17:51:39.621 DEBUG 2073 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Bean factory for org.springframework.web.context.support.GenericWebApplicationContext@69c42591: org.springframework.beans.factory.support.DefaultListableBeanFactory@44643bbf: defining beans [org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor,org.springframework.boot.test.mock.mockito.MockitoPostProcessor,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,temperaturesApplication]; root of factory hierarchy
+2018-04-30 17:51:39.788  INFO 2073 --- [    Test worker] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-04-30 17:51:39.829  INFO 2073 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$788c90e7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-04-30 17:51:39.839 DEBUG 2073 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@16d64769]
+2018-04-30 17:51:39.839 DEBUG 2073 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@52c299d5]
+2018-04-30 17:51:39.942  INFO 2073 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-04-30 17:51:39.943  INFO 2073 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-04-30 17:51:39.947  INFO 2073 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-04-30 17:51:39.962  INFO 2073 --- [    Test worker] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2018-04-30 17:51:39.962 DEBUG 2073 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table celsius_entity if exists
+2018-04-30 17:51:39.963 DEBUG 2073 --- [    Test worker] org.hibernate.SQL                        : 
+    create table celsius_entity (
+        id integer generated by default as identity,
+        celsius_tempscale varchar(255),
+        create_date timestamp,
+        update_date timestamp,
+        primary key (id)
+    )
+2018-04-30 17:51:39.964  INFO 2073 --- [    Test worker] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2018-04-30 17:51:39.965  INFO 2073 --- [    Test worker] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-04-30 17:51:39.968  WARN 2073 --- [    Test worker] o.h.j.i.EntityManagerFactoryRegistry     : HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2018-04-30 17:51:39.968  INFO 2073 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-04-30 17:51:39.978  INFO 2073 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [data.sql]
+2018-04-30 17:51:39.986  INFO 2073 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [data.sql] in 8 ms.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+Adding id,celsius_tempscale,create_date,update_date to SQL map.
+2018-04-30 17:51:40.177  INFO 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@69c42591: startup date [Mon Apr 30 17:51:39 CDT 2018]; root of context hierarchy
+2018-04-30 17:51:40.193 DEBUG 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking for request mappings in application context: org.springframework.web.context.support.GenericWebApplicationContext@69c42591: startup date [Mon Apr 30 17:51:39 CDT 2018]; root of context hierarchy
+2018-04-30 17:51:40.195 DEBUG 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 request handler methods found on class com.temps.rest.controller.TempsRestController: {public org.springframework.http.ResponseEntity com.temps.rest.controller.TempsRestController.getTemp(java.lang.String)={[/temps/{id}],methods=[GET]}, public org.springframework.http.ResponseEntity com.temps.rest.controller.TempsRestController.getTemps()={[/temps],methods=[GET],produces=[application/json]}, public org.springframework.http.ResponseEntity com.temps.rest.controller.TempsRestController.createTemp(com.temps.rest.model.CelsiusAll)={[/temps],methods=[POST]}, public org.springframework.http.ResponseEntity com.temps.rest.controller.TempsRestController.deleteTemp(java.lang.String)={[/temps/{id}],methods=[DELETE]}, public org.springframework.http.ResponseEntity com.temps.rest.controller.TempsRestController.getTempsRange(java.lang.String,java.lang.String)={[/temps/from/{fromDt}/to/{toDt}],methods=[GET],produces=[application/json]}, public org.springframework.http.ResponseEntity com.temps.rest.controller.TempsRestController.putTemp(java.lang.String,com.temps.rest.model.CelsiusAll)={[/temps/{id}],methods=[PUT]}}
+2018-04-30 17:51:40.195  INFO 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/temps/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.temps.rest.model.Temp> com.temps.rest.controller.TempsRestController.getTemp(java.lang.String)
+2018-04-30 17:51:40.195  INFO 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/temps],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.temps.rest.model.Temp>> com.temps.rest.controller.TempsRestController.getTemps()
+2018-04-30 17:51:40.195  INFO 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/temps],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.temps.rest.model.CelsiusAll> com.temps.rest.controller.TempsRestController.createTemp(com.temps.rest.model.CelsiusAll)
+2018-04-30 17:51:40.195  INFO 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/temps/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.temps.rest.model.Temp> com.temps.rest.controller.TempsRestController.deleteTemp(java.lang.String)
+2018-04-30 17:51:40.196  INFO 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/temps/from/{fromDt}/to/{toDt}],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.Collection<com.temps.rest.model.Temp>> com.temps.rest.controller.TempsRestController.getTempsRange(java.lang.String,java.lang.String)
+2018-04-30 17:51:40.196  INFO 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/temps/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.temps.rest.model.Temp> com.temps.rest.controller.TempsRestController.putTemp(java.lang.String,com.temps.rest.model.CelsiusAll)
+2018-04-30 17:51:40.197 DEBUG 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 request handler methods found on class org.springframework.boot.autoconfigure.web.BasicErrorController: {public org.springframework.http.ResponseEntity org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)={[/error]}, public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/error],produces=[text/html]}}
+2018-04-30 17:51:40.198  INFO 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-30 17:51:40.198  INFO 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Looking for URL mappings in application context: org.springframework.web.context.support.GenericWebApplicationContext@69c42591: startup date [Mon Apr 30 17:51:39 CDT 2018]; root of context hierarchy
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor': no URL paths identified
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor': no URL paths identified
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor': no URL paths identified
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor': no URL paths identified
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalRequiredAnnotationProcessor': no URL paths identified
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalCommonAnnotationProcessor': no URL paths identified
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor': no URL paths identified
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.event.internalEventListenerProcessor': no URL paths identified
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.event.internalEventListenerFactory': no URL paths identified
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'temperaturesApplication': no URL paths identified
+2018-04-30 17:51:40.211 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'appConfig': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tempsRestController': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tempsDAOProto': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tempsDAOService': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tempsDASetup': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSource': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'propertySourcesPlaceholderConfigurer': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'standardJacksonObjectMapperBuilderCustomizer': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonObjectMapperBuilder': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonObjectMapper': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jsonComponentModule': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration$TomcatWebSocketConfiguration': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'websocketContainerCustomizer': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatEmbeddedServletContainerFactory': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'embeddedServletContainerCustomizerBeanPostProcessor': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorPageRegistrarBeanPostProcessor': no URL paths identified
+2018-04-30 17:51:40.212 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dispatcherServlet': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.mvc-org.springframework.boot.autoconfigure.web.WebMvcProperties': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dispatcherServletRegistration': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultValidator': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'methodValidationPostProcessor': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'error': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'beanNameViewResolver': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'conventionErrorViewResolver': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorAttributes': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'basicErrorController': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorPageCustomizer': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'preserveErrorControllerTargetClassPostProcessor': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestMappingHandlerAdapter': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestMappingHandlerMapping': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcValidator': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcContentNegotiationManager': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcPathMatcher': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcUrlPathHelper': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'viewControllerHandlerMapping': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'beanNameHandlerMapping': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'resourceHandlerMapping': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcResourceUrlProvider': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultServletHandlerMapping': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcConversionService': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcUriComponentsContributor': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'httpRequestHandlerAdapter': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'simpleControllerHandlerAdapter': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'handlerExceptionResolver': no URL paths identified
+2018-04-30 17:51:40.213 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcViewResolver': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcHandlerMappingIntrospector': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'faviconHandlerMapping': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'faviconRequestHandler': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultViewResolver': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'viewResolver': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'welcomePageHandlerMapping': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestContextFilter': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'hiddenHttpMethodFilter': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'httpPutFormContentFilter': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$JdkDynamicAutoProxyConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.aop.config.internalAutoProxyCreator': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.jta.JtaAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.jta-org.springframework.boot.autoconfigure.transaction.jta.JtaProperties': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$TomcatDataSourcePoolMetadataProviderConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatPoolDataSourceMetadataProvider': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSourceInitializer': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSourceInitializerPostProcessor': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'openEntityManagerInViewInterceptor': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionManager': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jpaVendorAdapter': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'entityManagerFactoryBuilder': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'entityManagerFactory': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSourceInitializedPublisher': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'persistenceExceptionTranslationPostProcessor': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'emBeanDefinitionRegistrarPostProcessor': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jpaMappingContext': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jpaContext': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'stringHttpMessageConverter': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.http.encoding-org.springframework.boot.autoconfigure.web.HttpEncodingProperties': no URL paths identified
+2018-04-30 17:51:40.214 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mappingJackson2HttpMessageConverter': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageConverters': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.data.web.config.ProjectingArgumentResolverRegistrar': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'projectingArgumentResolverBeanPostProcessor': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.data.web.config.SpringDataWebConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'pageableResolver': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'sortResolver': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.data.web.config.SpringDataJacksonConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonGeoModule': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jdbcTemplate': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'namedParameterJdbcTemplate': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.config.internalTransactionAdvisor': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionAttributeSource': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionInterceptor': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.config.internalTransactionalEventListenerFactory': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration$CglibAutoProxyConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$TransactionTemplateConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionTemplate': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'platformTransactionManagerCustomizers': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.215 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'characterEncodingFilter': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'localeCharsetMappingsCustomizer': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'multipartConfigElement': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'multipartResolver': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.http.multipart-org.springframework.boot.autoconfigure.web.MultipartProperties': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'serverProperties': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'duplicateServerPropertiesDetector': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration$RestTemplateConfiguration': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'restTemplateBuilder': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.orm.jpa.SharedEntityManagerCreator#0': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'autoConfigurationReport': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.context.filter.TestTypeExcludeFilter': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer$PropertyMappingCheckBeanPostProcessor': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springApplicationArguments': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootBanner': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootLoggingSystem': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'environment': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'systemProperties': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'systemEnvironment': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'servletContext': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contextParameters': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contextAttributes': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.mock.mockito.MockitoBeans': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageSource': no URL paths identified
+2018-04-30 17:51:40.216 DEBUG 2073 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'applicationEventMulticaster': no URL paths identified
+2018-04-30 17:51:40.221  INFO 2073 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-30 17:51:40.221  INFO 2073 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-30 17:51:40.228 DEBUG 2073 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Looking for exception mappings: org.springframework.web.context.support.GenericWebApplicationContext@69c42591: startup date [Mon Apr 30 17:51:39 CDT 2018]; root of context hierarchy
+2018-04-30 17:51:40.242  INFO 2073 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-30 17:51:40.408 DEBUG 2073 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@292b84d5]
+2018-04-30 17:51:40.413 DEBUG 2073 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Looking for resource handler mappings
+2018-04-30 17:51:40.413 DEBUG 2073 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/**/favicon.ico", locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@798bd26f]
+2018-04-30 17:51:40.413 DEBUG 2073 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/webjars/**", locations=[class path resource [META-INF/resources/webjars/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@4e950fc5]
+2018-04-30 17:51:40.413 DEBUG 2073 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/**", locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@5ed83436]
+2018-04-30 17:51:40.415  INFO 2073 --- [    Test worker] c.t.rest.TemperaturesApplicationTests    : Started TemperaturesApplicationTests in 0.819 seconds (JVM running for 7.061)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

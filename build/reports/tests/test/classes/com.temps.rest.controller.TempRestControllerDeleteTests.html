@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.temps.rest.controller.TempRestControllerDeleteTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.temps.rest.controller.TempRestControllerDeleteTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.temps.rest.controller.html">com.temps.rest.controller</a> &gt; TempRestControllerDeleteTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.026s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">deleteTemp</td>
+<td>0.018s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteTempNotFound</td>
+<td>0.008s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2018-04-30 17:51:39.544  INFO 2073 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.temps.rest.controller.TempRestControllerDeleteTests], using SpringBootContextLoader
+2018-04-30 17:51:39.544  INFO 2073 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.temps.rest.controller.TempRestControllerDeleteTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-04-30 17:51:39.544  INFO 2073 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.temps.rest.controller.TempRestControllerDeleteTests]: TempRestControllerDeleteTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-04-30 17:51:39.548  INFO 2073 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.temps.rest.TemperaturesApplication for test class com.temps.rest.controller.TempRestControllerDeleteTests
+2018-04-30 17:51:39.551  INFO 2073 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-04-30 17:51:39.553  INFO 2073 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@283482b3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@70531694, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@460a4c38, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4c4cac9e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@40618ebe, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@286ec790, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3c112529, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@15905669, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@59482e1b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@74430e5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@32c96549, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@25fd4e67]
+2018-04-30 17:51:39.556 DEBUG 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /temps/9999999
+2018-04-30 17:51:39.556 DEBUG 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public org.springframework.http.ResponseEntity&lt;com.temps.rest.model.Temp&gt; com.temps.rest.controller.TempsRestController.deleteTemp(java.lang.String)]
+2018-04-30 17:51:39.557 DEBUG 2073 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        celsiusent0_.id as id1_0_0_,
+        celsiusent0_.celsius_tempscale as celsius_2_0_0_,
+        celsiusent0_.create_date as create_d3_0_0_,
+        celsiusent0_.update_date as update_d4_0_0_ 
+    from
+        celsius_entity celsiusent0_ 
+    where
+        celsiusent0_.id=?
+2018-04-30 17:51:39.557 TRACE 2073 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [9999999]
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /temps/9999999
+       Parameters = {}
+          Headers = {}
+
+Handler:
+             Type = com.temps.rest.controller.TempsRestController
+           Method = public org.springframework.http.ResponseEntity&lt;com.temps.rest.model.Temp&gt; com.temps.rest.controller.TempsRestController.deleteTemp(java.lang.String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2018-04-30 17:51:39.564 DEBUG 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /temps/2
+2018-04-30 17:51:39.564 DEBUG 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public org.springframework.http.ResponseEntity&lt;com.temps.rest.model.Temp&gt; com.temps.rest.controller.TempsRestController.getTemp(java.lang.String)]
+2018-04-30 17:51:39.565 DEBUG 2073 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        celsiusent0_.id as id1_0_0_,
+        celsiusent0_.celsius_tempscale as celsius_2_0_0_,
+        celsiusent0_.create_date as create_d3_0_0_,
+        celsiusent0_.update_date as update_d4_0_0_ 
+    from
+        celsius_entity celsiusent0_ 
+    where
+        celsiusent0_.id=?
+2018-04-30 17:51:39.565 TRACE 2073 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [2]
+2018-04-30 17:51:39.568 DEBUG 2073 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Written [com.temps.rest.model.CelsiusAll@21] as &quot;application/json&quot; using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@fd3adee]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /temps/2
+       Parameters = {}
+          Headers = {}
+
+Handler:
+             Type = com.temps.rest.controller.TempsRestController
+           Method = public org.springframework.http.ResponseEntity&lt;com.temps.rest.model.Temp&gt; com.temps.rest.controller.TempsRestController.getTemp(java.lang.String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {&quot;tempScale&quot;:&quot;C&quot;,&quot;id&quot;:2,&quot;create_date&quot;:&quot;2018-04-28 14:00:53&quot;,&quot;update_date&quot;:&quot;2018-04-28 14:00:53&quot;,&quot;celsius&quot;:13.3}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+result str :{&quot;tempScale&quot;:&quot;C&quot;,&quot;id&quot;:2,&quot;create_date&quot;:&quot;2018-04-28 14:00:53&quot;,&quot;update_date&quot;:&quot;2018-04-28 14:00:53&quot;,&quot;celsius&quot;:13.3}
+2018-04-30 17:51:39.571 DEBUG 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /temps/2
+2018-04-30 17:51:39.571 DEBUG 2073 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public org.springframework.http.ResponseEntity&lt;com.temps.rest.model.Temp&gt; com.temps.rest.controller.TempsRestController.deleteTemp(java.lang.String)]
+2018-04-30 17:51:39.572 DEBUG 2073 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        celsiusent0_.id as id1_0_0_,
+        celsiusent0_.celsius_tempscale as celsius_2_0_0_,
+        celsiusent0_.create_date as create_d3_0_0_,
+        celsiusent0_.update_date as update_d4_0_0_ 
+    from
+        celsius_entity celsiusent0_ 
+    where
+        celsiusent0_.id=?
+2018-04-30 17:51:39.572 TRACE 2073 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [2]
+2018-04-30 17:51:39.574 DEBUG 2073 --- [    Test worker] org.hibernate.SQL                        : 
+    delete 
+    from
+        celsius_entity 
+    where
+        id=?
+2018-04-30 17:51:39.575 TRACE 2073 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [2]
+2018-04-30 17:51:39.576 DEBUG 2073 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Written [com.temps.rest.model.CelsiusAll@21] as &quot;application/json&quot; using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@fd3adee]
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /temps/2
+       Parameters = {}
+          Headers = {}
+
+Handler:
+             Type = com.temps.rest.controller.TempsRestController
+           Method = public org.springframework.http.ResponseEntity&lt;com.temps.rest.model.Temp&gt; com.temps.rest.controller.TempsRestController.deleteTemp(java.lang.String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json]}
+     Content type = application/json
+             Body = {&quot;tempScale&quot;:&quot;C&quot;,&quot;id&quot;:2,&quot;create_date&quot;:&quot;2018-04-28 14:00:53&quot;,&quot;update_date&quot;:&quot;2018-04-28 14:00:53&quot;,&quot;celsius&quot;:13.3}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 3.5.1</a> at Apr 30, 2018 5:51:40 PM</p>
+</div>
+</div>
+</body>
+</html>

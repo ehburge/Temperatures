@@ -10,7 +10,7 @@ import com.temps.rest.model.CelsiusAll.BuildPost;
 public class Celsius implements Temp {
 
 	/**
-	 * Date format is yyyy-MM-dd'T'HH:mm:ss
+	 * Date format is "yyyy-MM-dd HH:mm:ss"
 	 */
 	public final static SimpleDateFormat DateFormatter =
 			new SimpleDateFormat("yyyy-MM-dd' 'HH:mm:ss");
@@ -97,7 +97,7 @@ public class Celsius implements Temp {
 	}
 
 	public String getUpdate_date() {
-		return DateFormatter.format(celsiusEntity.getCreate_date());
+		return DateFormatter.format(celsiusEntity.getUpdate_date());
 	}
 
 	public void setUpdate_date(String updDateStr) {
