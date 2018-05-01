@@ -3,8 +3,8 @@
   "groups": [
     {
       "sourceType": "com.temps.rest.config.AppConfig",
-      "name": "temps.mysql",
-      "sourceMethod": "wineSource()",
+      "name": "spring.datasource",
+      "sourceMethod": "dataSource()",
       "type": "javax.sql.DataSource"
     }
   ],

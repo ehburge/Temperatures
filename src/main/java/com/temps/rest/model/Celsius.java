@@ -97,7 +97,7 @@ public class Celsius implements Temp {
 	}
 
 	public String getUpdate_date() {
-		return DateFormatter.format(celsiusEntity.getCreate_date());
+		return DateFormatter.format(celsiusEntity.getUpdate_date());
 	}
 
 	public void setUpdate_date(String updDateStr) {
