@@ -28,24 +28,24 @@ public class TempsDAOProto implements TempsDAO {
 		return tempsDASetup.temps();
 	}
 
-	public void tempsVolume() {
-
-		Random rnd = new Random();
-		Character tempC;
-		int temp;
-
-		for (int i = 0; i < 100; i++) {
-			tempC = (rnd.nextBoolean()) ? 'F' : 'C';
-			temp = rnd.nextInt(40 - -10 + 1) + -10;
-
-			CelsiusAll cel =
-					new CelsiusAll.BuildPost(tempC, new BigDecimal(temp)).build();
-
-			tempsDASetup.create(cel);
-
-		}
-
-	}
+//	public void tempsVolume() {
+//
+//		Random rnd = new Random();
+//		Character tempC;
+//		int temp;
+//
+//		for (int i = 0; i < 100; i++) {
+//			tempC = (rnd.nextBoolean()) ? 'F' : 'C';
+//			temp = rnd.nextInt(40 - -10 + 1) + -10;
+//
+//			CelsiusAll cel =
+//					new CelsiusAll.BuildPost(tempC, new BigDecimal(temp)).build();
+//
+//			tempsDASetup.create(cel);
+//
+//		}
+//
+//	}
 
 	@Override
 	public Collection<CelsiusAll> tempsRange(Date fromDate, Date toDate) {
